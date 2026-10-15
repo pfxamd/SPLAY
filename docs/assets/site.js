@@ -128,7 +128,7 @@ if(studio){
  function message(s){status.textContent=s}
  function makeAxes(){attachAxes(axesContainer,state.family,state.axes,function(){draw();});}
  function draw(){
-  input.value=state.text;
+  if(input.value!==state.text)input.value=state.text;
   classSwap(art,'poster-',state.palette,['pink','black','white']);
   classSwap(art,'composition-',state.layout,['impact','echo','fold','drift']);
   classSwap(art,'type-',state.family,Object.keys(familyDefs));
@@ -159,8 +159,10 @@ if(studio){
  if(linkState){var decoded=validate(linkState);if(decoded)state=decoded}
  else if(params.has('preset')){var idx=Number(params.get('preset'));if(Number.isInteger(idx)&&idx>=0&&idx<presets.length)applyPreset(idx)}
  makeAxes();draw();
- input.addEventListener('focus',function(){snapshot()});
- input.addEventListener('input',function(){state.text=textSafe(input.value);draw()});
+ var newTextSession=true;
+ input.addEventListener('focus',function(){newTextSession=true});
+ input.addEventListener('blur',function(){newTextSession=true});
+ input.addEventListener('input',function(){if(newTextSession){snapshot();newTextSession=false}state.text=textSafe(input.value);draw()});
  $$('[data-maker-family]',studio).forEach(function(b){b.addEventListener('click',function(){if(state.family!==b.dataset.makerFamily)apply({family:b.dataset.makerFamily},true)})});
  $$('[data-maker-layout]',studio).forEach(function(b){b.addEventListener('click',function(){if(state.layout!==b.dataset.makerLayout)apply({layout:b.dataset.makerLayout},true)})});
  $$('[data-maker-palette]',studio).forEach(function(b){b.addEventListener('click',function(){if(state.palette!==b.dataset.makerPalette)apply({palette:b.dataset.makerPalette},true)})});

@@ -20,4 +20,29 @@ const posters=await readFile(resolve(root,'posters/index.html'),'utf8');
 assert.equal((posters.match(/class="archive-item"/g)||[]).length,12,'12 poster studies');
 const check=spawnSync(process.execPath,['--check',resolve(root,'assets/site.js')],{encoding:'utf8'});
 assert.equal(check.status,0,check.stderr);
+
+// Protect navigation, branding and relative Pages links.
+const fsPaths=new Set();
+async function collect(dir, prefix='') {
+ for(const item of await (await import('node:fs/promises')).readdir(dir,{withFileTypes:true})){
+  const relative=prefix+item.name;
+  if(item.isDirectory())await collect(resolve(dir,item.name),relative+'/');
+  else fsPaths.add(relative);
+ }
+}
+await collect(root);
+for(const route of routes){
+ const content=await readFile(resolve(root,route,'index.html'),'utf8');
+ assert.match(content,/aria-label="SPLAY Home">SPL<span class="logo-a">Λ<\/span>Y/,'correct SPLAY logo in '+route);
+ for(const match of content.matchAll(/(?:href|src)="(\/SPLAY\/[^"]*)"/g)){
+  const url=match[1].split(/[?#]/)[0].slice('/SPLAY/'.length);
+  const path=url.endsWith('/') ? url+'index.html' : url;
+  assert.ok(fsPaths.has(path),'missing local link target: '+match[1]+' in '+route);
+ }
+}
+const css=await readFile(resolve(root,'assets/site.css'),'utf8');
+for(const font of ['Anybody.ttf','Recursive.woff2','Fraunces.ttf']){
+ assert.ok(css.includes("fonts/"+font),'missing local font declaration '+font);
+}
+
 console.log('SPLAY checks passed: 10 pages, 12 posters, fonts and script syntax.');
