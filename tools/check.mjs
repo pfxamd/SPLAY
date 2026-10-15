@@ -36,7 +36,7 @@ for(const route of routes){
  assert.match(content,/aria-label="SPLAY Home">SPL<span class="logo-a">Λ<\/span>Y/,'correct SPLAY logo in '+route);
  for(const match of content.matchAll(/(?:href|src)="(\/SPLAY\/[^"]*)"/g)){
   const url=match[1].split(/[?#]/)[0].slice('/SPLAY/'.length);
-  const path=url.endsWith('/') ? url+'index.html' : url;
+  const path=(!url||url.endsWith('/')) ? url+'index.html' : url;
   assert.ok(fsPaths.has(path),'missing local link target: '+match[1]+' in '+route);
  }
 }
