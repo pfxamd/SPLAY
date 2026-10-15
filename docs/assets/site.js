@@ -99,7 +99,7 @@ filterButtons.forEach(function(btn){btn.addEventListener('click',function(){var 
 // Full type playground
 var work=$('[data-workbench]');
 if(work){
- var face='shift',state=defaults(face),renderEl=$('[data-play-render]',work),frame=$('[data-play-frame]',axisPanel=$('[data-axis-panel]',work),caption=$('[data-family-label]',work);
+ var face='shift',state=defaults(face),renderEl=$('[data-play-render]',work),frame=$('[data-play-frame]',work),axisPanel=$('[data-axis-panel]',work),caption=$('[data-family-label]',work);
  var given=new URLSearchParams(location.search).get('family');if(familyDefs[given])face=given;
  function renderPlay(){
   classSwap(renderEl,'type-',face,Object.keys(familyDefs));
