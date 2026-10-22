@@ -36,7 +36,7 @@ The complete prerendered website is committed under `docs/`. Pages, styles and i
 
 ## Publish (manual opt-in)
 
-The website is prepared for the GitHub Pages project subpath `/SPLAY/`. To publish using the repository settings, set Pages source to **Deploy from a branch → main → /docs**. No Pages deployment is activated automatically, and this repository does not ship GitHub Actions workflows. All internal navigation and fonts are prefixed for this subpath.
+The live GitHub Pages site uses **Deploy from a branch → main → /docs**. Pushing main publishes automatically. No custom workflow or manual Actions dispatch is required. Fonts and the favicon are served from the verified central R2 library; original binaries remain outside docs in `source-media/`.
 
 ## Original work and typeface credits
 
@@ -64,7 +64,7 @@ Original font license notices are included in `licenses/`. Actual bundled fonts 
 docs/                 Static pages and browser-ready site
 docs/assets/site.css  Authored art direction and layouts
 docs/assets/site.js   Interaction engine, specimens and poster maker
-docs/assets/fonts/    Three original variable font binaries
+source-media/         Original variable fonts and favicon (outside publication)
 tools/serve.mjs       Local /SPLAY/ test server
 tools/check.mjs       Focused route/assets/source validation
 licenses/             Original font license notices

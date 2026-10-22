@@ -1,0 +1,38 @@
+{
+  "sourceCommit": "4dd1d1c1971dce3aabf297ca3af9fc12d3f4d4ea",
+  "prefix": "pfxamd/concepts/splay/",
+  "records": [
+    {
+      "source": "source-media/favicon.svg",
+      "output": "assets/favicon.svg",
+      "key": "pfxamd/concepts/splay/favicon.svg",
+      "bytes": 213,
+      "sha256": "22298e4a926244f93a39a3c7ebf06b0ddd65edbe2ebeaf3cb3dac95560683587",
+      "archiveSource": "docs/assets/favicon.svg"
+    },
+    {
+      "source": "source-media/Anybody.ttf",
+      "output": "assets/fonts/Anybody.ttf",
+      "key": "pfxamd/concepts/splay/Anybody.ttf",
+      "bytes": 201352,
+      "sha256": "b184bd7e6ca8348bbaecec98951565729d7e89b7872d4898a1f9981342b5b64c",
+      "archiveSource": "docs/assets/fonts/Anybody.ttf"
+    },
+    {
+      "source": "source-media/Fraunces.ttf",
+      "output": "assets/fonts/Fraunces.ttf",
+      "key": "pfxamd/concepts/splay/Fraunces.ttf",
+      "bytes": 360440,
+      "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+      "archiveSource": "docs/assets/fonts/Fraunces.ttf"
+    },
+    {
+      "source": "source-media/Recursive.woff2",
+      "output": "assets/fonts/Recursive.woff2",
+      "key": "pfxamd/concepts/splay/Recursive.woff2",
+      "bytes": 204728,
+      "sha256": "881d5634390e100b9c3b49c72bc0aeef4945922d43ee15045b859a6c707971e8",
+      "archiveSource": "docs/assets/fonts/Recursive.woff2"
+    }
+  ]
+}

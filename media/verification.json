@@ -1,0 +1,30 @@
+[
+  {
+    "key": "pfxamd/concepts/splay/Fraunces.ttf",
+    "status": 200,
+    "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+    "bytes": 360440,
+    "verified": true
+  },
+  {
+    "key": "pfxamd/concepts/splay/favicon.svg",
+    "status": 200,
+    "sha256": "22298e4a926244f93a39a3c7ebf06b0ddd65edbe2ebeaf3cb3dac95560683587",
+    "bytes": 213,
+    "verified": true
+  },
+  {
+    "key": "pfxamd/concepts/splay/Anybody.ttf",
+    "status": 200,
+    "sha256": "b184bd7e6ca8348bbaecec98951565729d7e89b7872d4898a1f9981342b5b64c",
+    "bytes": 201352,
+    "verified": true
+  },
+  {
+    "key": "pfxamd/concepts/splay/Recursive.woff2",
+    "status": 200,
+    "sha256": "881d5634390e100b9c3b49c72bc0aeef4945922d43ee15045b859a6c707971e8",
+    "bytes": 204728,
+    "verified": true
+  }
+]
